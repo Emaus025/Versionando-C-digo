@@ -113,3 +113,58 @@ curl -X POST http://localhost:3000/api/v1/tasks/create \
 ```
 
 ## 🏗️ Estructura del Proyecto
+
+
+## 🔒 Autenticación
+
+La API utiliza JWT (JSON Web Tokens) para la autenticación. Después del login exitoso, incluye el token en el header `Authorization` como `Bearer <token>` para acceder a las rutas protegidas.
+
+## 🗄️ Modelos de Datos
+
+### Usuario
+```go
+type User struct {
+    ID             string    `json:"id,omitempty"`
+    Name           string    `json:"name"`
+    LastName       string    `json:"lastName"`
+    Email          string    `json:"email"`
+    Password       string    `json:"password"`
+    BirthDate      time.Time `json:"birthDate"`
+    SecretQuestion string    `json:"secretQuestion"`
+    SecretAnswer   string    `json:"secretAnswer"`
+}
+```
+
+### Tarea
+```go
+type Task struct {
+    ID          string    `json:"id,omitempty"`
+    Title       string    `json:"title"`
+    Description string    `json:"description"`
+    StartAt     time.Time `json:"startAt"`
+    DueDate     time.Time `json:"dueDate"`
+    UserID      string    `json:"userId"`
+}
+```
+
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## ✨ Autor
+
+- Tu nombre - [@tu-usuario](https://github.com/tu-usuario)
+
+## 🙏 Agradecimientos
+
+- [Fiber](https://gofiber.io/) - Framework web para Go
+- [MongoDB](https://www.mongodb.com/) - Base de datos NoSQL
+- [JWT](https://jwt.io/) - Estándar para tokens de acceso
