@@ -1,0 +1,12 @@
+# Binarios compilados
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Archivos de entorno (contiene secretos)
+.env
+
+# Directorio de dependencias de Go
+vendor/
